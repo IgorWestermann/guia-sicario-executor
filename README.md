@@ -58,7 +58,16 @@ Eu particularmente gosto de colocar Destruidor de Almas no 10 pra tirar proveito
 
 ### Sicário
 
-No Sicário, a build começa a tomar forma. As skills de dano físico giram em torno de Lâminas Retalhadoras, Lâminas de Loki ou Retaliação, dependendo da arma e dos equips. É de suma importância maximizar Pesquisa de Toxinas pra aumentar a duração da nossa EDP. Aplicar toxina também vai ser MUITO importante, tanto pra upar com Cicuta quanto pra aumentar o dano com Pirexia. Garra Sombria vai fazer você ter ainda mais dano explosivo. Eu não vejo muito motivo, HOJE, pra gastar mais que 2 pontos em Castigo de Loki.
+No Sicário, a build começa a tomar forma. As skills de dano físico giram em torno de Lâminas Retalhadoras, Lâminas de Loki ou Retaliação, dependendo da arma e dos equips. É de suma importância maximizar Pesquisa de Toxinas pra aumentar a duração da nossa EDP. Aplicar toxina também vai ser MUITO importante, tanto pra upar com Cicuta quanto pra aumentar o dano com Pirexia e ela sempre vai ser aplicada em você mesmo. Garra Sombria vai fazer você ter ainda mais dano explosivo. Eu não vejo muito motivo, HOJE, pra gastar mais que 2 pontos em Castigo de Loki.
+
+Sobre o [Aplicar Toxina](https://browiki.org/wiki/Aplicar_Toxina), exitem diversas toxinas mas as 3 principais são: Cicuta, Pirexia e Waraitake 
+
+![ícone](https://static.divine-pride.net/images/items/item/12721.png)	Cicuta - Regenera 1% de SP por segundo. É a toxina que você vai usar 99% do tempo.
+![ícone](https://static.divine-pride.net/images/items/item/12722.png)	Pirexia - Dano crítico +15%. Dano de ataque básico +(Nv. de base ÷ 20)%. Geralmente usada para matar MVPs ou Boss de Instância.
+![ícone](https://static.divine-pride.net/images/items/item/12723.png)	Waraitake - Pós-conjuração -10%. Um pouco mais situacional, principalmente quando você ainda não fechou a pós-conjuração.
+
+Obs.: Quando você aplica a toxina, voocê ganha um bônus de 10% de dano corpo a corpo.
+
 
 ![skilltree-sicario](image-2.png)
 
@@ -95,6 +104,7 @@ Alguns nomes parecem parecidos, mas não fazem a mesma coisa. Essa confusão é 
 
 | Stat | O que faz | Como pensar na build |
 | --- | --- | --- |
+| Esquiva | Como o nome diz, é a chance de esquivar de um ataque, mas não ache que você é um Deus e nada vai te acertar porque sempre que você é atacado por mais de 2 monstros, sua esquiva cai em 10% por monstro extra | Pra Katar, a chance crítica real é dobrada, mas isso não aparece na janela de atributos. Então o número exibido não conta a história inteira. |
 | CRIT | É a chance de acertar crítico. Crítico ignora Esquiva, mas não ignora Esquiva Perfeita nem DEF. | Pra Katar, a chance crítica real é dobrada, mas isso não aparece na janela de atributos. Então o número exibido não conta a história inteira. |
 | Dano crítico % | Multiplicador aplicado no dano crítico depois da base de crítico. | Muito bom, mas também pode saturar. Compare com dano contra tamanho, raça, chefe, propriedade e dano físico. |
 | POD | Atributo de 4ª classe focado em dano físico. Cada ponto dá ATQ e, a cada 3 pontos, dá P.ATQ. | Aumenta consideravelmente o dano do seu Executor, principalmente por causa do P.ATQ. |
@@ -308,8 +318,9 @@ Opções de Baixo:
 | Item | Quando usar | Por quê |
 | --- | --- | --- |
 | ![ícone](https://static.divine-pride.net/images/items/item/28000.png) [Katar de Cinzas [1]](https://www.divine-pride.net/database/item/28000/katar-de-cinzas-1) | Early/sustain | Conversão de dano físico em HP/SP e combo com Elmo Mortal de Cinzas. |
-| ![ícone](https://static.divine-pride.net/images/items/item/28022.png) [Infiltrador Ilusional [2]](https://www.divine-pride.net/database/item/28022/infiltrador-ilusional-2) | Early/Mid genérico | Boa katar de transição. Com Anel Ilusional ganha ASPD e dano crítico. |
-| ![ícone](https://static.divine-pride.net/images/items/item/610012.png) [Gélida Ilusional [2]](https://www.divine-pride.net/database/item/610012/gelida-ilusional-2) | Quando falta CRIT | No +11 dá CRIT e melhora com Anel Ilusional. |
+| ![ícone](https://static.divine-pride.net/images/items/item/28022.png) [Infiltrador Ilusional [2]](https://www.divine-pride.net/database/item/28022/infiltrador-ilusional-2) | Early/Mid | Boa katar de transição principalmente contra Humanoides. Com Anel Ilusional ganha ASPD e dano crítico. |
+| ![ícone](https://static.divine-pride.net/images/items/item/610012.png) [Gélida Ilusional [2]](https://www.divine-pride.net/database/item/610012/gelida-ilusional-2) | Early/Mid | Uma katar muito boa no geral. No +11 dá CRIT e melhora com Anel Ilusional. |
+| ![ícone](https://static.divine-pride.net/images/items/item/1291.png) [Katar do Sicário [1]](https://www.divine-pride.net/database/item/1291/katar-do-sicario-1) | Early/Mid | Aumenta o dano da Retalhadoras e contra Humanoides. Versão melhorada da Infiltrador Ilusional mas com apenas 1 slot |
 | ![ícone](https://static.divine-pride.net/images/items/item/28044.png) [Agudo Filo [2]](https://www.divine-pride.net/database/item/28044/agudo-filo-2) | Mid/End com Espólio | Dano crítico, dano contra todos os tamanhos no +9 e ótima sinergia com Espólio de Eremes. |
 | ![ícone](https://static.divine-pride.net/images/items/item/28045.png) [Alicate [2]](https://www.divine-pride.net/database/item/28045/alicate-2) | Einbech/Lâminas de Loki | Dano físico, ASPD, pós no +11 e efeito de dano contra todos os tamanhos. |
 | ![ícone](https://static.divine-pride.net/images/items/item/610008.png) [Katar Primordial [2]](https://www.divine-pride.net/database/item/610008/katar-primordial-2) | End-game | Excelente pra dano crítico e Lâminas Retalhadoras; no +11 dá CRIT e reduz recarga de Garra Sombria. |
@@ -351,12 +362,14 @@ Opções de Baixo:
 | --- | --- | --- |
 | ![ícone](https://static.divine-pride.net/images/items/item/2886.png) [Anel dos Manuks](https://www.divine-pride.net/database/item/2886/anel-dos-manuks) | Início | Combo Manuk. Pode receber encantamentos <br> [Lista de Encantamentos](https://browiki.org/wiki/Encantamentos_de_Mora)  |
 | ![ícone](https://static.divine-pride.net/images/items/item/28509.png) [Anel Ilusional [1]](https://www.divine-pride.net/database/item/28509/anel-ilusional-1) | Com armas Ilusionais | Ativa combos com Infiltrador/Gélida Ilusional. |
-| ![ícone](https://static.divine-pride.net/images/items/item/32207.png) [Turbina Ilusión A [1]](https://www.divine-pride.net/database/item/32207/turbina-ilusion-a-1) | Mid-game | Dano físico e módulos S-F4/S-AA4. |
+| ![ícone](https://static.divine-pride.net/images/items/item/32207.png) [Turbina Ilusión A [1]](https://www.divine-pride.net/database/item/32207/turbina-ilusion-a-1)<br>![ícone](https://static.divine-pride.net/images/items/item/32207.png) [Turbina Ilusión B [1]](https://www.divine-pride.net/database/item/32208/turbina-ilusion-b-1)| Mid-game | Dano físico e módulos S-F4/S-AA4. A Turbina A equipa na Direita e a B na esquerda |
 | ![ícone](https://static.divine-pride.net/images/items/item/2922.png) [Luva de Sorte](https://www.divine-pride.net/database/item/2922/luva-de-sorte) | CRIT por SOR | CRIT a cada 10 de SOR base e dano crítico com SOR 110+. |
 | ![ícone](https://static.divine-pride.net/images/items/item/491014.png) [Anulus Ira [1]](https://www.divine-pride.net/database/item/491014/anulus-ira-1) | Early-game | Dano contra todos os tamanhos e esquiva perfeita. Pelo preço é muito bom mas só equipa no acessório esquerdo |
 | ![ícone](https://static.divine-pride.net/images/items/item/32228.png) [Brasão de Schmidt FOR [1]](https://www.divine-pride.net/database/item/32228/brasao-de-schmidt-for-1) | Mid/end | Dano físico. Com Cachecol e FOR 125, anula penalidade de arma. |
 | ![ícone](https://static.divine-pride.net/images/items/item/32230.png) [Brasão de Schmidt SOR [1]](https://www.divine-pride.net/database/item/32230/brasao-de-schmidt-sor-1) | End-game | Com Cachecol e SOR 125, adiciona dano corpo a corpo. |
 | ![ícone](https://static.divine-pride.net/images/items/item/490163.png) [Broche Primordial [1]](https://www.divine-pride.net/database/item/490163/heros-badge-1) | End-game | Ativam um combo muito forte com o encantamentos das Bota Primordial-LT <br> [Lista de Encantamentos](https://hazyforest.com/enchants:hero_s_badge). |
+| ![ícone](https://static.divine-pride.net/images/items/item/490024.png) [Turbina Automatron A [1]](https://www.divine-pride.net/database/item/490024/turbina-automatron-a-1) <br> ![ícone](https://static.divine-pride.net/images/items/item/490024.png) [Turbina Automatron B [1]](https://www.divine-pride.net/database/item/490025/turbina-automatron-b-1)| End-game | Versão melhorada da Turbina Ilusión e com autómodulos melhorados. A Turbina A equipa na Direita e a B na esquerda. Pelo preço não acho que vale a pena. |
+| ![ícone](https://static.divine-pride.net/images/items/item/490164.png) [Cordão do Executor [1]](https://www.divine-pride.net/database/item/32230/brasao-de-schmidt-sor-1) | High End-game | Atualmente o melhor acessório para usar com a Katar e Jur Primordial LT |
 | ![ícone](https://static.divine-pride.net/images/items/item/490056.png) [Anel Radiante Rubi [1]](https://www.divine-pride.net/database/item/490056/anel-radiante-rubi-1) <br>e<br> ![ícone](https://static.divine-pride.net/images/items/item/490057.png) [Colar Radiante Rubi [1]](https://www.divine-pride.net/database/item/490057/colar-radiante-rubi-1) | Situacional | Muito fortes com Diadema Radiante: Dano físico, ASPD, pós, dano contra Chefes e Anjos e Demônios. |
 
 ### Shadows
