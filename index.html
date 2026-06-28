@@ -243,15 +243,23 @@
           .replace(/>/g, "&gt;");
       }
 
+      async function loadMarkdown() {
+        const sources = ["README.md", "guia.md"];
+
+        for (const source of sources) {
+          const response = await fetch(source, { cache: "no-cache" });
+
+          if (response.ok) {
+            return response.text();
+          }
+        }
+
+        throw new Error("Nenhum arquivo de guia foi encontrado.");
+      }
+
       async function renderGuide() {
         try {
-          const response = await fetch("README.md", { cache: "no-cache" });
-
-          if (!response.ok) {
-            throw new Error("README.md nao encontrado");
-          }
-
-          const markdown = await response.text();
+          const markdown = await loadMarkdown();
           guide.innerHTML = window.marked
             ? marked.parse(markdown, { gfm: true, breaks: false })
             : `<pre><code>${escapeHtml(markdown)}</code></pre>`;
@@ -270,4 +278,3 @@
     </script>
   </body>
 </html>
-
