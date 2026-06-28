@@ -650,7 +650,7 @@ Olhe o Alt+Q das pessoas. Veja as cartas que elas usam e vá atrás de dropar pr
 
 ## Considerações finais
 
-Esse guia não é uma receita de bolo. A ideia aqui não é você copiar exatamente cada item e achar que a build só funciona de um jeito. Ragnarok é um jogo cheio de detalhe, preço volátil, evento que mudam tudo e item que às vezes aparece barato do nada (ofertas da shopee).
+Esse guia não é uma receita de bolo. A ideia aqui não é você copiar exatamente cada item e achar que a build só funciona de um jeito. Ragnarok é um jogo cheio de detalhe, preços voláteis, eventos que mudam tudo e item que às vezes aparece barato do nada (ofertas da shopee).
 
 Use o guia como um norte. Antes de comprar qualquer coisa cara, tenta entender qual problema aquele item resolve.
 
