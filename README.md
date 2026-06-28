@@ -1,12 +1,10 @@
-# Guia do Sicário ao Executor
-
 ![imagem](Guia_do_Sicario_ao_Executor_assets/thumb.png)
 
 <p align="center">
   <img src="https://www.youtube.com/s/desktop/6740ecb6/img/favicon.ico" alt="YouTube" width="18" height="18" style="vertical-align: middle;">
   <a href="https://www.youtube.com/@igantee">@igantee</a>
   &nbsp;|&nbsp;
-  <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png" alt="Discord" width="18" height="18" style="vertical-align: middle;">
+    <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png" alt="Discord" width="18" height="18" style="vertical-align: middle;">
   <span>@igorWL</span>
 </p>
 
