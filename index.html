@@ -24,10 +24,15 @@
         --code-bg: #edf1f7;
         --shadow: 0 18px 50px rgba(22, 28, 45, 0.12);
         --guide-padding: clamp(22px, 4vw, 52px);
+        --toc-width: 280px;
       }
 
       * {
         box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
       }
 
       html {
@@ -56,6 +61,60 @@
       .page {
         width: min(1160px, calc(100% - 32px));
         margin: 28px auto;
+      }
+
+      .toc-panel {
+        position: fixed;
+        top: 28px;
+        bottom: 28px;
+        left: max(18px, calc((100vw - 1768px) / 2));
+        z-index: 10;
+        width: var(--toc-width);
+        overflow-y: auto;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 16px 42px rgba(22, 28, 45, 0.12);
+      }
+
+      .toc-title {
+        margin-bottom: 10px;
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .toc-links {
+        display: grid;
+        gap: 2px;
+      }
+
+      .toc-link {
+        display: block;
+        padding: 7px 9px;
+        border-radius: 6px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.3;
+        text-decoration: none;
+      }
+
+      .toc-link:hover,
+      .toc-link.is-active {
+        background: var(--soft);
+        color: var(--accent);
+      }
+
+      .toc-link-depth-3 {
+        padding-left: 22px;
+        font-size: 0.86rem;
+      }
+
+      .toc-toggle,
+      .toc-backdrop {
+        display: none;
       }
 
       .guide {
@@ -217,6 +276,52 @@
         margin: 36px 0;
       }
 
+      @media (max-width: 1791px) {
+        .toc-panel {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 40;
+          width: min(340px, calc(100vw - 48px));
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          transform: translateX(calc(-100% - 18px));
+          transition: transform 180ms ease;
+        }
+
+        .toc-panel.is-open {
+          transform: translateX(0);
+        }
+
+        .toc-toggle {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          z-index: 50;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          min-height: 44px;
+          padding: 0 14px;
+          border: 1px solid rgba(255, 255, 255, 0.34);
+          border-radius: 999px;
+          background: #171a21;
+          color: #ffffff;
+          box-shadow: 0 16px 34px rgba(22, 28, 45, 0.24);
+          cursor: pointer;
+          font: inherit;
+          font-weight: 700;
+        }
+
+        .toc-backdrop:not([hidden]) {
+          position: fixed;
+          inset: 0;
+          z-index: 30;
+          display: block;
+          background: rgba(23, 26, 33, 0.36);
+        }
+      }
+
       @media (max-width: 720px) {
         .page {
           width: 100%;
@@ -237,6 +342,13 @@
     </style>
   </head>
   <body>
+    <button id="tocToggle" class="toc-toggle" type="button" aria-controls="tocPanel" aria-expanded="false" hidden>Índice</button>
+    <div id="tocBackdrop" class="toc-backdrop" hidden></div>
+    <aside id="tocPanel" class="toc-panel" aria-label="Índice do guia" hidden>
+      <div class="toc-title">Índice</div>
+      <nav id="tocLinks" class="toc-links"></nav>
+    </aside>
+
     <main class="page">
       <article id="guide" class="guide">
         <div class="loading">Carregando guia...</div>
@@ -246,6 +358,10 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
       const guide = document.getElementById("guide");
+      const tocPanel = document.getElementById("tocPanel");
+      const tocLinks = document.getElementById("tocLinks");
+      const tocToggle = document.getElementById("tocToggle");
+      const tocBackdrop = document.getElementById("tocBackdrop");
 
       function escapeHtml(value) {
         return value
@@ -268,6 +384,83 @@
         throw new Error("Nenhum arquivo de guia foi encontrado.");
       }
 
+      function slugify(value) {
+        return value
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .trim()
+          .replace(/\s+/g, "-")
+          .replace(/-+/g, "-") || "secao";
+      }
+
+      function openToc() {
+        tocPanel.classList.add("is-open");
+        tocToggle.setAttribute("aria-expanded", "true");
+        tocBackdrop.hidden = false;
+      }
+
+      function closeToc() {
+        tocPanel.classList.remove("is-open");
+        tocToggle.setAttribute("aria-expanded", "false");
+        tocBackdrop.hidden = true;
+      }
+
+      function buildToc() {
+        const headings = [...guide.querySelectorAll("h2, h3")]
+          .filter((heading) => heading.textContent.trim());
+        const usedIds = new Map();
+
+        tocLinks.innerHTML = "";
+
+        if (!headings.length) {
+          tocPanel.hidden = true;
+          tocToggle.hidden = true;
+          return;
+        }
+
+        tocPanel.hidden = false;
+        tocToggle.hidden = false;
+
+        headings.forEach((heading) => {
+          const baseId = slugify(heading.textContent);
+          const count = usedIds.get(baseId) || 0;
+          const id = count ? `${baseId}-${count + 1}` : baseId;
+          usedIds.set(baseId, count + 1);
+          heading.id = id;
+
+          const link = document.createElement("a");
+          link.href = `#${id}`;
+          link.textContent = heading.textContent;
+          link.className = `toc-link toc-link-depth-${heading.tagName === "H3" ? "3" : "2"}`;
+          link.addEventListener("click", closeToc);
+          tocLinks.appendChild(link);
+        });
+
+        const links = [...tocLinks.querySelectorAll("a")];
+        const setActive = (id) => {
+          links.forEach((link) => {
+            link.classList.toggle("is-active", link.hash === `#${id}`);
+          });
+        };
+
+        setActive(headings[0].id);
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries
+              .filter((entry) => entry.isIntersecting)
+              .forEach((entry) => setActive(entry.target.id));
+          }, {
+            rootMargin: "0px 0px -72% 0px",
+            threshold: 0.01
+          });
+
+          headings.forEach((heading) => observer.observe(heading));
+        }
+      }
+
       async function renderGuide() {
         try {
           const markdown = await loadMarkdown();
@@ -279,11 +472,23 @@
             link.setAttribute("target", "_blank");
             link.setAttribute("rel", "noopener noreferrer");
           });
+
+          buildToc();
         } catch (error) {
           guide.innerHTML = `<div class="error">Nao foi possivel carregar o guia.</div>`;
           console.error(error);
         }
       }
+
+      tocToggle.addEventListener("click", () => {
+        tocPanel.classList.contains("is-open") ? closeToc() : openToc();
+      });
+      tocBackdrop.addEventListener("click", closeToc);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeToc();
+        }
+      });
 
       renderGuide();
     </script>
